@@ -5,7 +5,7 @@
 
 A shelf of notebooks that open in 3D. Tap a notebook and its pages fan out in a curved accordion you can drag, swipe or flip with the arrow keys. The last page signs off and the book closes back onto the shelf.
 
-One script, no dependencies, no build step. Plain JavaScript and CSS 3D transforms, 36 KB (11.4 KB gzipped) with the styles included.
+One script, no dependencies, no build step. Plain JavaScript and CSS 3D transforms, 37 KB (11.6 KB gzipped) with the styles included.
 
 **Live demo: https://chasebuilds.github.io/notebook-shelf/**
 
