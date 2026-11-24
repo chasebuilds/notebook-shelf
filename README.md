@@ -146,12 +146,12 @@ From [`docs/MEASURED.md`](docs/MEASURED.md): headed Chromium on this repo's demo
 
 | Setup | Scenario | Frames per second | 95th percentile frame time |
 |---|---|---:|---:|
-| Desktop (Ryzen 5 7600X, RTX 5070) | scrubbing across all 6 leaves, new position every frame | 915 | 2.7 ms |
-| Same | open and close loop | 1,238 | 2.3 ms |
-| CPU slowed 4x with `Emulation.setCPUThrottlingRate` | scrubbing | 391 | 7.2 ms |
-| Same | open and close loop | 703 | 4.8 ms |
+| Desktop (Ryzen 5 7600X, RTX 5070) | scrubbing across all 6 leaves, new position every frame | 1,478 | 1.5 ms |
+| Same | open and close loop | 1,709 | 1.4 ms |
+| CPU slowed 4x with `Emulation.setCPUThrottlingRate` | scrubbing | 665 | 3.2 ms |
+| Same | open and close loop | 1,037 | 1.5 ms |
 
-The shelf's own code takes 0.04 ms per frame (0.16 ms with the CPU slowed 4x). Throttling slows script and layout, not the GPU, so it is a rough phone stand-in, not a phone. Rerun with `npm run measure`.
+The shelf's own code takes 0.03 ms per frame (0.07 ms with the CPU slowed 4x). Under 1% of frames took longer than 16.7 ms in every row. These numbers need an otherwise idle machine: with other programs holding the CPU at 100%, the same run dropped below 60 fps. Throttling slows script and layout, not the GPU, so it is a rough phone stand-in, not a phone. Rerun with `npm run measure`.
 
 ## Tests
 
