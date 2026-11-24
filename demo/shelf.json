@@ -1,0 +1,55 @@
+{
+  "title": "Sketchbook",
+  "notebooks": [
+    {
+      "id": "field-notes",
+      "title": "Field notes",
+      "cover": { "color": "#9ccfb2", "pattern": "dots" },
+      "pages": [
+        { "title": "Ridge walk", "text": "Two miles up the old logging road. The haze sat in the hollows until ten, then burned off all at once.", "image": { "src": "demo/img/hills.svg", "alt": "Green hills under an orange sun", "width": 320, "height": 200 }, "note": "Start early, the top is shady until noon.", "noteLabel": "Tip" },
+        { "title": "The creek", "text": "Water was low enough to cross on the flat rocks. Saw a heron leave without a sound.", "image": { "src": "demo/img/creek.svg", "alt": "A blue creek with round stones", "width": 320, "height": 200 } },
+        { "title": "Leaf rubbing", "text": "Tulip poplar. The leaf is shaped like a cat's head if you squint.", "image": { "src": "demo/img/leaf.svg", "alt": "A green leaf with veins", "width": 320, "height": 200 } },
+        { "title": "Things to bring next time", "text": "Better socks, a second water bottle, and something to sit on that is not a wet log." }
+      ]
+    },
+    {
+      "id": "soup-log",
+      "title": "Soup log",
+      "cover": { "color": "#f1c67c", "pattern": "lines" },
+      "pages": [
+        { "title": "Tomato and white bean", "text": "Roast the tomatoes first. A spoon of the bean liquid makes it thick without cream.", "image": { "src": "demo/img/bowl.svg", "alt": "A pink bowl of soup with steam", "width": 320, "height": 200 }, "note": "8 out of 10. Needs more salt than you think.", "noteLabel": "Verdict" },
+        { "title": "Potato leek", "text": "Wash the leeks twice. The grit hides in the layers and you only find it with your teeth." },
+        { "title": "Leftover vegetable", "text": "Whatever is in the drawer, a bay leaf, and patience. Different every time, which is the point." }
+      ]
+    },
+    {
+      "id": "doodles",
+      "title": "Doodles",
+      "cover": { "color": "#c5a4e2", "pattern": "grid" },
+      "pages": [
+        { "title": "Shapes warm-up", "text": "Circle, rounded square, triangle, wavy line. Ten of each before anything else.", "image": { "src": "demo/img/shapes.svg", "alt": "A purple circle, blue square and pink triangle", "width": 320, "height": 200 } },
+        { "title": "Hands are hard", "text": "Drew mine forty times. The thumb keeps coming out like a carrot." }
+      ]
+    },
+    {
+      "id": "garden",
+      "title": "Garden",
+      "cover": { "color": "#b5c37b", "pattern": "stripe" },
+      "pages": [
+        { "title": "What came up", "text": "Beans first, then basil. The peppers are taking their time and I am trying not to dig them up to check.", "image": { "src": "demo/img/seeds.svg", "alt": "Three green sprouts in soil", "width": 320, "height": 200 } },
+        { "title": "Watering", "text": "Morning, at the roots, not the leaves. Twice a week unless it rains." },
+        { "title": "Next year", "text": "Fewer zucchini. Nobody needs that many zucchini." }
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "title": "How this works",
+      "cover": { "color": "#8eb2e6", "pattern": "plain" },
+      "pages": [
+        { "title": "One script", "text": "Load notebook-shelf.js and call NotebookShelf.mount(element, data). Or add data-notebook-shelf to a div and it mounts itself.", "links": [{ "label": "API docs", "href": "https://github.com/chasebuilds/notebook-shelf#api" }] },
+        { "title": "Only CSS 3D", "text": "Each page is a plain element moved with transform and opacity. Only the pages near the one you are on are in 3D at all.", "links": [{ "label": "How the 3D works", "href": "https://github.com/chasebuilds/notebook-shelf#how-the-3d-works" }] },
+        { "title": "Keys and readers", "text": "Left and Right flip, Escape closes, Enter opens a notebook. The covers and pages are real lists and buttons.", "links": [{ "label": "Source", "href": "https://github.com/chasebuilds/notebook-shelf" }] }
+      ]
+    }
+  ]
+}

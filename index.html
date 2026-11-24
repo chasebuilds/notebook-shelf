@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notebook Shelf</title>
+<meta name="description" content="A shelf of notebooks that open in 3D. Vanilla JS and CSS 3D transforms, one script, no dependencies.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='3' width='14' height='18' rx='2' fill='%238eb2e6'/%3E%3Crect x='8' y='7' width='8' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif; background: #98a2d1; }
+  @media (prefers-color-scheme: dark) { body { background: #1d2240; } }
+  #shelf { --nbs-height: 100svh; --nbs-radius: 0; }
+  .about { position: absolute; z-index: 4; top: 64px; right: 14px; width: min(320px, calc(100% - 28px)); padding: 16px 18px; border-radius: 18px;
+    background: rgba(255, 255, 255, .88); color: #222744; font-size: 14px; line-height: 1.5; box-shadow: 0 20px 40px -20px rgba(26, 30, 72, .5); }
+  .about[hidden] { display: none; }
+  .about h2 { margin: 0 0 6px; font-size: 16px; }
+  .about p, .about ul { margin: 0 0 8px; }
+  .about ul { padding-left: 18px; }
+  .about a { color: #3a43c4; }
+  noscript { display: block; padding: 24px; }
+</style>
+</head>
+<body>
+<h1 class="nbs-sr">Notebook Shelf demo</h1>
+<main id="shelf" aria-label="Notebook shelf demo"><noscript>This demo needs JavaScript. The source is at https://github.com/chasebuilds/notebook-shelf.</noscript></main>
+<script src="notebook-shelf.js"></script>
+<script>
+(async () => {
+  const data = await (await fetch('demo/shelf.json')).json();
+  const host = document.getElementById('shelf');
+  let about;
+  let added = 0;
+  const link = location.href.split('#')[0];
+  const copy = async (shelf) => {
+    try { await navigator.clipboard.writeText(link); shelf.toast('Link copied'); } catch (_) { shelf.toast('Copy blocked by the browser'); }
+  };
+  const shelf = NotebookShelf.mount(host, data, {
+    topActions: [
+      { id: 'about', icon: 'info', label: 'About this demo', onClick: (s, e, btn) => {
+        about.hidden = !about.hidden;
+        btn.setAttribute('aria-expanded', String(!about.hidden));
+      } },
+      { id: 'source', icon: 'code', label: 'Source on GitHub', onClick: () => { location.href = 'https://github.com/chasebuilds/notebook-shelf'; } },
+    ],
+    actions: [
+      { id: 'more', icon: 'more', label: 'Keyboard tips', onClick: (s) => s.toast('Enter opens, arrows flip, Escape closes') },
+      { id: 'share', icon: 'share', label: 'Share this demo', onClick: async (s) => {
+        if (navigator.share) { try { await navigator.share({ title: document.title, url: link }); } catch (_) { /* closed the sheet */ } }
+        else copy(s);
+      } },
+      { id: 'copy', icon: 'copy', label: 'Copy link', onClick: copy },
+      { id: 'add', icon: 'add', label: 'Add a notebook', onClick: (s) => {
+        added += 1;
+        s.setData({ ...data, notebooks: [...s.data, { id: `new-${added}`, title: `New notebook ${added}`, pages: [{ title: 'Blank page', text: 'Nothing here yet. This notebook was added with setData().' }] }] });
+        s.toast(`Added New notebook ${added}`);
+      } },
+    ],
+  });
+  about = document.createElement('div');
+  about.className = 'about';
+  about.id = 'about';
+  about.hidden = true;
+  about.innerHTML = '<h2>Notebook Shelf</h2><p>A shelf of notebooks that open in 3D, made with plain JavaScript and CSS transforms.</p>'
+    + '<ul><li>Tap a notebook, or Tab to it and press Enter.</li><li>Drag, swipe or use Left and Right to flip.</li><li>Escape or the X closes it.</li></ul>'
+    + '<p><a href="https://github.com/chasebuilds/notebook-shelf">Source and docs</a></p>';
+  host.append(about);
+  host.querySelector('[data-action="about"]').setAttribute('aria-controls', 'about');
+  host.querySelector('[data-action="about"]').setAttribute('aria-expanded', 'false');
+  window.__shelf = shelf;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drop-in Shelf</title>
+<style>body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; background: #e9ebf7; } h1 { font-size: 20px; }</style>
+</head>
+<body>
+<h1>Drop-in example</h1>
+<p>One script tag and one div. The data sits in the div as JSON.</p>
+<div data-notebook-shelf data-title="Two notebooks" style="--nbs-height: 520px">
+  <script type="application/json">
+  [
+    { "id": "a", "title": "Notes", "cover": { "color": "#efa6c6", "pattern": "dots" },
+      "pages": [ { "title": "First page", "text": "Hello from a drop-in shelf." }, { "title": "Second page", "text": "Links work too.", "links": [ { "label": "Main demo", "href": "../" } ] } ] },
+    { "id": "b", "title": "Lists", "cover": { "color": "#a3d4de" },
+      "pages": [ { "title": "Groceries", "text": "Oats, apples, coffee." } ] }
+  ]
+  </script>
+</div>
+<script src="../notebook-shelf.js"></script>
+</body>
+</html>

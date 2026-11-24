@@ -1,0 +1,19 @@
+{
+  "name": "notebook-shelf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A shelf of notebooks that open in 3D. Vanilla JS and CSS 3D transforms, one script, no dependencies.",
+  "license": "MIT",
+  "type": "module",
+  "main": "notebook-shelf.js",
+  "scripts": {
+    "serve": "node scripts/preview.mjs",
+    "test": "node test/smoke.mjs",
+    "test:smoke": "node test/smoke.mjs",
+    "measure": "node scripts/measure.mjs",
+    "screenshots": "node scripts/screenshots.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}
