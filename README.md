@@ -173,3 +173,11 @@ Other scripts: `npm run serve` (local server on port 4173), `npm run measure`, `
 ## License
 
 MIT
+
+## More from Chase Builds
+
+- **[dither-pond](https://github.com/chasebuilds/dither-pond)**: A stylized 3D scene with a day-to-night slider and a mix of animals, boat, bike, wind and water. ([live demo](https://chasebuilds.github.io/dither-pond/))
+- **[liquid-logo-studio](https://github.com/chasebuilds/liquid-logo-studio)**: Turns any logo into animated liquid chrome or gold, ready to export or embed. ([live demo](https://chasebuilds.github.io/liquid-logo-studio/))
+- **[window-hero](https://github.com/chasebuilds/window-hero)**: Your homepage becomes a window: the 3D scene shifts as the visitor moves. Camera optional and on-device only. ([live demo](https://chasebuilds.github.io/window-hero/))
+
+[All projects, sorted by industry](https://github.com/chasebuilds) · [chasebuilds.github.io](https://chasebuilds.github.io)
