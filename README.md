@@ -9,7 +9,7 @@ One script, no dependencies, no build step. Plain JavaScript and CSS 3D transfor
 
 **Live demo: https://chasebuilds.github.io/notebook-shelf/**
 
-![Opening a notebook, scrubbing through its pages and closing it](docs/demo.gif)
+![Recorded from the live demo: a notebook opens from the shelf and its pages turn](docs/preview.gif)
 
 | Shelf | Open | Half-turn |
 |---|---|---|
@@ -39,6 +39,8 @@ From code:
 ```
 
 Copy `notebook-shelf.js` into your site, or load it from a pinned release tag, for example `https://cdn.jsdelivr.net/gh/chasebuilds/notebook-shelf@v1.0.0/notebook-shelf.js`.
+
+![Opening a notebook, scrubbing through its pages and closing it](docs/demo.gif)
 
 ## Data
 
